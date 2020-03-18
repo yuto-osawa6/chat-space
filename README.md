@@ -33,7 +33,7 @@ Things you may want to cover:
 |group_id|integer|null: false|
 
 ### Association
-- has_many :group,through:members
+- has_many :groups,through:members
 - has_many :members
 - has_many :messages
 
@@ -46,7 +46,7 @@ Things you may want to cover:
 ### Association
 - has_many :members
 - has_many :messages
-- has_many :user,through:members
+- has_many :users,through:members
 
 ## membersテーブル
 
