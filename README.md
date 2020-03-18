@@ -33,21 +33,22 @@ Things you may want to cover:
 |group_id|integer|null: false|
 
 ### Association
-- has_many :group
-- has_many :groups_users
+- has_many :group,through:members
+- has_many :members
+- has_many :messages
 
 ## groups
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
 |name|varchar|null: false|
-|user_id|integer|null: false|foreign_key: true|
 
 ### Association
-- has_many :groups_users
-- belongs_to :user
+- has_many :members
+- has_many :messages
+- has_many :user,through:members
 
-## groups_usersテーブル
+## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -59,7 +60,7 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## commentテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
