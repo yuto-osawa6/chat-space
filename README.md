@@ -27,7 +27,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|name|varchar|null: false|
+|name|varchar|null: false,unique:true,index,true|
 |email|varchar|null: false|
 |password|varchar|null: false|
 |group_id|integer|null: false|
