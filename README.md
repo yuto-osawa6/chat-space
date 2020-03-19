@@ -30,7 +30,6 @@ Things you may want to cover:
 |name|varchar|null: false,unique:true,index,true|
 |email|varchar|null: false|
 |password|varchar|null: false|
-|group_id|integer|null: false|
 
 ### Association
 - has_many :groups,through:members
@@ -65,7 +64,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|comment|varchar|null: false|
+|comment|text|
+|image|text|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
