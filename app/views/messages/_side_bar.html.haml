@@ -1,1 +1,18 @@
-＜サイドバー＞
+.side
+  .side-header
+    .side-header__box
+      .side-header__box__user-name 
+        masa
+      %ul.side-header__box__icon
+        %li.side-header__box__icon__list
+          = link_to "", class:"side-header__box__icon__list__edit" do
+            = icon('far', 'edit')
+        %li.side-header__box__icon__list
+          = link_to "", class:"side-header__box__icon__list__edit" do
+            = icon('fa', 'cog')
+  .groups
+    .group
+      %p.group__name 
+        Techcamp
+      %p.group__message 
+        まだメッセージがありません。
