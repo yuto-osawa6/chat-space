@@ -48,7 +48,7 @@
 
     .group{
       margin-bottom: 40px;
-
+      
       &__name{
         font-size: 15px;
       }
@@ -110,6 +110,7 @@
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding: 35px 40px 0;
+    overflow: scroll;
 
     &__box{
       padding: 0 0 46px
@@ -180,4 +181,10 @@
       }
     }
   }
+}
+
+/*add*/
+.group a{
+  text-decoration: none;
+  color: white;
 }
