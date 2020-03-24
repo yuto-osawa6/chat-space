@@ -2,50 +2,50 @@ $(function() {
   
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="main__message-list__box" data-message-id=` + message.id + `>` +
-        `<div class="uppaer-info">` +
-          `<p class="uppaer-info__talker">` +
-            message.user_name +
-          `</p>` +
-          `<p class="uppaer-info__date">` +
-            message.created_at +
-          `</p>` +
-        `</div>` +
-        `<p class="message-text">` +`</p>` +
-          `<p class="lower-message__content">` +
-            message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-      `</div>`
+      var html = `<div class="main__message-list__box" data-message-id= ${message.id}>
+        <div class="uppaer-info">
+          <p class="uppaer-info__talker">
+            ${message.user_name}
+          </p>
+          <p class="uppaer-info__date">
+            ${message.created_at}
+          </p>
+        </div>
+        <p class="message-text"></p>
+          <p class="lower-message__content">
+            ${message.content}
+          </p>
+          <img src="${message.image}" class="lower-message__image" >
+      </div>`
     } else if (message.content) {
-      var html = `<div class="main__message-list__box" data-message-id=` + message.id + `>` +
-        `<div class="uppaer-info">` +
-          `<p class="uppaer-info__talker">` +
-            message.user_name +
-          `</p>` +
-          `<p class="uppaer-info__date">` +
-            message.created_at +
-          `</p>` +
-        `</div>` +
-        `<p class="message-text">` +`</p>` +
-          `<p class="lower-message__content">` +
-            message.content +
-            `</p>` +
-      `</div>`
+      var html = `<div class="main__message-list__box" data-message-id=${message.id}>
+        <div class="uppaer-info">
+          <p class="uppaer-info__talker">
+            ${message.user_name}
+          </p>
+          <p class="uppaer-info__date">
+            ${message.created_at}
+          </p>
+        </div>
+        <p class="message-text"></p>
+          <p class="lower-message__content">
+            ${message.content}
+            </p>
+      </div>`
     } else if (message.image) {
-      var html = `<div class="main__message-list__box" data-message-id=` + message.id + `>` +
-        `<div class="uppaer-info">` +
-          `<p class="uppaer-info__talker">` +
-            message.user_name +
-          `</p>` +
-          `<p class="uppaer-info__date">` +
-            message.created_at +
-          `</p>` +
-        `</div>` +
-        `<p class="message-text">` + `</p>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</p>` +
-      `</div>`
+      var html = `<div class="main__message-list__box" data-message-id= ${message.id}>
+        <div class="uppaer-info">
+          <p class="uppaer-info__talker">
+            ${message.user_name}
+          </p>
+          <p class="uppaer-info__date">
+            ${message.created_at}
+          </p>
+        </div>
+        <p class="message-text"></p>
+          <img src="${message.image}" class="lower-message__image" >
+        </p>
+      </div>`
     };
     return html;
   };
@@ -81,7 +81,6 @@ $(function() {
   
     var reloadMessages = function() {
       var last_message_id = $('.main__message-list__box:last').data("message-id");
-      console.log(last_message_id);
       $.ajax({
         url: "api/messages",
         type: 'get',
